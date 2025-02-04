@@ -17,7 +17,7 @@ def main():
 	add_selectbox = st.sidebar.selectbox(
 	"Cómo quiere predecir?",
 	("Online", "Batch"))
-	st.sidebar.info('Esta aplicación fue creada por el equipo-c23-17-data para predecir el abandono de clientes de una empresa de Telecomunicaciones')
+	st.sidebar.info('Esta aplicación fue desarrollada por el equipo-c23-17-data de No Country para predecir el abandono de clientes en una empresa de Telecomunicaciones')
 	st.sidebar.image(image2)
 	st.title("Predicción de abandono de clientes: Empresa de Telecomunicaciones")
 	if add_selectbox == 'Online':
