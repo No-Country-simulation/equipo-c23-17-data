@@ -66,7 +66,7 @@ def main():
 
 		if st.button("Predict"):
 			print("Online Input Dict:", input_dict)  # Log the input dictionary
-			st.write("Online Input Dict:", input_dict)  # Display input_dict in the app
+			#st.write("Online Input Dict:", input_dict)  # Display input_dict in the app
 			X = dv.transform([input_dict])
 			y_pred = model.predict_proba(X)[0, 1]
 			churn = y_pred >= 0.5
@@ -83,9 +83,9 @@ def main():
 			return href
 
 		# Mostrar el enlace en la app
-		st.markdown(file_download_link("batch_ejemplo.csv", "Descargar CSV"), unsafe_allow_html=True)
+		st.markdown(file_download_link("batch_ejemplo.csv", "Descargar CSV de ejemplo para luego subir"), unsafe_allow_html=True)
 
-		file_upload = st.file_uploader("Upload csv file for predictions", type=["csv"])
+		file_upload = st.file_uploader("Cargar archivo csv para batch prediction", type=["csv"])
 		if file_upload is not None:
 			data = pd.read_csv(file_upload)
 			
@@ -152,7 +152,7 @@ def main():
 			print("Batch Data:", data)  # Log the batch data
 			st.write("Batch Data:", data)  # Display batch data in the app
 			records = data.to_dict(orient='records')
-			st.write("Batch Records:", records)  # Display records in the app
+			#st.write("Batch Records:", records)  # Display records in the app
 			
 			# Transform data and make predictions
 			X = dv.transform(records)
