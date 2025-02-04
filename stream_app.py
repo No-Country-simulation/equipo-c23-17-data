@@ -1,6 +1,7 @@
 import pickle
 import streamlit as st
 import pandas as pd
+import base64
 from PIL import Image
 model_file = 'model_C=1.0.bin'
 
@@ -74,14 +75,16 @@ def main():
 		st.success('Churn: {0}, Risk Score: {1}'.format(output, output_prob))
 
 	if add_selectbox == 'Batch':
-		# Abrir el archivo CSV en modo binario
-		with open("batch_ejemplo.csv", "rb") as f:
-			st.download_button(
-				label="Descargar CSV de ejemplo para luego subir",
-				data=f,
-				file_name="batch_ejemplo.csv",
-				mime="text/csv"
-			)
+		def file_download_link(file_path, file_label='Descargar archivo'):
+			with open(file_path, "rb") as f:
+				data = f.read()
+			b64 = base64.b64encode(data).decode()
+			href = f'<a href="data:text/csv;base64,{b64}" download="{file_path}">{file_label}</a>'
+			return href
+
+		# Mostrar el enlace en la app
+		st.markdown(file_download_link("batch_ejemplo.csv", "Descargar CSV"), unsafe_allow_html=True)
+
 		file_upload = st.file_uploader("Upload csv file for predictions", type=["csv"])
 		if file_upload is not None:
 			data = pd.read_csv(file_upload)
