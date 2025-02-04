@@ -74,6 +74,14 @@ def main():
 		st.success('Churn: {0}, Risk Score: {1}'.format(output, output_prob))
 
 	if add_selectbox == 'Batch':
+		# Abrir el archivo CSV en modo binario
+		with open("batch_ejemplo.csv", "rb") as f:
+			st.download_button(
+				label="Descargar CSV de ejemplo para luego subir",
+				data=f,
+				file_name="batch_ejemplo.csv",
+				mime="text/csv"
+			)
 		file_upload = st.file_uploader("Upload csv file for predictions", type=["csv"])
 		if file_upload is not None:
 			data = pd.read_csv(file_upload)
