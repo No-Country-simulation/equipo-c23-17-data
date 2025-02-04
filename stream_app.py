@@ -15,7 +15,7 @@ def main():
 	image2 = Image.open('images/image.png')
 	#st.image(image,use_column_width=False)
 	add_selectbox = st.sidebar.selectbox(
-	"How would you like to predict?",
+	"Cómo quiere predecir?",
 	("Online", "Batch"))
 	st.sidebar.info('Esta aplicación fue creada por el equipo-c23-17-data para predecir el abandono de clientes de una empresa de Telecomunicaciones')
 	st.sidebar.image(image2)
