@@ -72,7 +72,7 @@ def main():
 			churn = y_pred >= 0.5
 			output_prob = float(y_pred)
 			output = bool(churn)
-		st.success('Churn: {0}, Risk Score: {1}'.format(output, output_prob))
+		st.success('Abandono: {0}, Risk Score: {1}'.format(output, output_prob))
 
 	if add_selectbox == 'Batch':
 		def file_download_link(file_path, file_label='Descargar archivo'):
@@ -158,7 +158,7 @@ def main():
 			X = dv.transform(records)
 			y_pred = model.predict_proba(X)[:, 1]
 			churn = y_pred >= 0.5
-			results = pd.DataFrame({'Churn': churn, 'Risk Score': y_pred})
+			results = pd.DataFrame({'Abandono': churn, 'Risk Score': y_pred})
 			st.write(results)
 
 if __name__ == '__main__':
