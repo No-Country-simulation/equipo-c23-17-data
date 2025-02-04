@@ -19,8 +19,7 @@ def main():
 	("Online", "Batch"))
 	st.sidebar.info('Esta aplicación fue creada por el equipo-c23-17-data para predecir el abandono de clientes de una empresa de Telecomunicaciones')
 	st.sidebar.image(image2)
-	st.title("Predicción de abandono de clientes")
-	st.title("en empresa de Telecomunicaciones")
+	st.title("Predicción de abandono de clientes: Empresa de Telecomunicaciones")
 	if add_selectbox == 'Online':
 		gender = st.selectbox('Gender:', ['male', 'female'])
 		seniorcitizen= st.selectbox(' Customer is a senior citizen:', [0, 1])
