@@ -114,3 +114,25 @@ Es una buena práctica automatizar el proceso de entrenamiento usando un script 
 Consulte [train.py](https://github.com/No-Country-simulation/equipo-c23-17-data/blob/main/train.py)  para explorar cómo empaquetar un modelo en un script que automatiza el entrenamiento del modelo
 
 Una vez que descubrimos el modelo de mejor ajuste, debemos guardarlo para reutilizarlo más adelante sin ejecutar ninguno de los scripts del código de entrenamiento anteriores.  
+
+<H2> Disponibilizando el servicio de predicción a través de una aplicación web con Streamlit </H2>
+
+La barra lateral de Streamlit presenta una menu desplegable donde los usuarios pueden seleccionar el tipo de predicción del modelo que desean realizar: por lotes (BATCH - predicciones para múltiples clientes, cargando un archivo csv) o predicción en línea (ONLINE - para clientes individuales).
+
+<H2> Conclusión </H2>
+
+Este análisis desarrollado en [Churn_EDA_model_development.ipynb](https://github.com/No-Country-simulation/equipo-c23-17-data/blob/main/Churn_EDA_model_development.ipynb) no solo ayudó al cliente a comprender mejor los patrones de comportamiento en de sus clientes, sino que también le proporcionó una herramienta poderosa para **anticiparse y mitigar riesgos**, por ejemplo realizando una campaña de marketing con aquellos clientes para los cuales se predice un abandono. Con esta solución empresa está ahora mejor equipada para fidelizar sus clientes y asignar eficientemente sus recursos en campañas de marketing.
+
+## Integrantes
+
+- José Fernández Madero: [GitHub](https://github.com/josefmadero)
+- Melissa Londoño: [GitHub](https://github.com/melissa9608)
+
+## Tecnologías
+
+<img align="left" alt="Python" width="50px" style="padding-right:10px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"/>
+<img align="left" alt="Pandas" width="50px" style="padding-right:10px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original-wordmark.svg"/>
+<img align="left" alt="Numpy" width="50px" style="padding-right:10px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-plain.svg"/>
+<img align="left" alt="Scikit-learn" width="50px" style="padding-right:10px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg"/>
+<img align="left" alt="Jupyter" width="50px" style="padding-right:10px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg"/>
+<img align="left" alt="Streamlit" width="50px" style="padding-right:10px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/streamlit/streamlit-plain-wordmark.svg"/>
