@@ -20,15 +20,14 @@ La contenedorización de Docker ayuda a que esta aplicación sea independiente d
 
 Nuestro cliente, una empresa de Telecomunicación, identificó un problema creciente: **abandono de clientes**. Para abordar este desafío, nos pidieron analizar los datos de sus clientes, con dos objetivos claros:
 
-1️⃣ **Entender el comportamiento de los clientes y encontrar patrones**.
+1️⃣ **Entender el comportamiento de los clientes y encontrar patrones**. VER EL NOTEBOOK "Churn_EDA_model_development.ipynb"
 
-2️⃣ **Desarrollar un modelo predictivo** que permitiera calcular la probabilidad de que un cliente abandone la compañía.
+2️⃣ **Desarrollar un modelo predictivo** que permitiera calcular la probabilidad de que un cliente abandone la compañía. VER https://equipo-c23-17-data-main.streamlit.app/
 
 > [!NOTE]
 > Fuente del proyecto: [Kaggle dataset](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
 
-> [!IMPORTANT]
-> Los datos que se usaron no son exactamente los mismos, se editaron, limpiaron y transformaron para subirse a la base de datos. Como tal ocupan *todo el año 2019*
+
 
 </BR>
 
