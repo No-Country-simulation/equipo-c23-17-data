@@ -77,36 +77,40 @@ Python tiene excelentes bibliotecas como Pandas, NumPy y Matplotlib que admiten 
 
 En resumen, realizamos los siguientes pasos para crear nuestro modelo de predicción de deserción:
 
-1. Preparación inicial de datos
+### 1. Preparación inicial de datos
   - Realizar comprobaciones de cordura en los tipos de datos y los nombres de las columnas
   - Realizar correcciones de tipo de datos si es necesario
     
-2. Comprensión de datos y características
+### 2. Comprensión de datos y características
   - Verificar la distribución de las características numéricas
   - Verificar los valores distintos de las características categóricas
   - Verificar la distribución de la característica objetivo
     
-3. Análisis exploratorio de datos
+### 3. Análisis exploratorio de datos
   - Manejar los valores faltantes
   - Manejar los valores atípicos
   - Comprender las correlaciones e identificar las espurias
     
-4. Ingeniería de características e importancia
-Analizar la tasa de deserción y los puntajes de riesgo en diferentes cohortes y grupos de características
-Calcular la información mutua
-Verificar las correlaciones de características
-Codificación de características categóricas y escalado de características numéricas
-Convertir las características categóricas en valores numéricos utilizando la función auxiliar de Scikit-Learn: Dictionary Vectoriser
-Escalar las características numéricas para estandarizarlas en un rango fijo
-Entrenamiento del modelo
-Seleccionar un algoritmo de ML apropiado
-Entrenar el modelo con parámetros personalizados
-Evaluación del modelo
-Consulte Churn_model_metrics.ipynb
-Utilizar diferentes métricas para evaluar el modelo, como la precisión, la tabla de confusión, la precisión, la exhaustividad, las curvas ROC, AUROC y la validación cruzada.
-Repita los pasos 6 y 7 para diferentes algoritmos e hiperparámetros del modelo, luego seleccione el modelo de mejor ajuste.
+### 4. Ingeniería de características e importancia
+  - Analizar la tasa de deserción y los puntajes de riesgo en diferentes cohortes y grupos de características
+  - Calcular la información mutua
+  - Verificar las correlaciones de características
+  
+### 5. Codificación de características categóricas y escalado de características numéricas
+  - Convertir las características categóricas en valores numéricos utilizando la función auxiliar de Scikit-Learn: Dictionary Vectoriser
+  - Escalar las características numéricas para estandarizarlas en un rango fijo
+  
+### 6. Entrenamiento del modelo
+  - Seleccionar un algoritmo de ML apropiado
+  - Entrenar el modelo con parámetros personalizados
+
+### 7. Evaluación del modelo
+  - Consulte [Churn_EDA_model_development.ipynb](https://github.com/No-Country-simulation/equipo-c23-17-data/blob/main/Churn_EDA_model_development.ipynb).
+  - Utilizar diferentes métricas para evaluar el modelo, como la precisión, la tabla de confusión, la precisión, la exhaustividad, las curvas ROC, AUROC y la validación cruzada.
+    
+### 8. Repita los pasos 6 y 7 para diferentes algoritmos e hiperparámetros del modelo, luego seleccione el modelo de mejor ajuste.
 Es una buena práctica automatizar el proceso de entrenamiento usando un script de Python. Cada vez que elegimos volver a entrenar el modelo con un nuevo parámetro o un nuevo conjunto de datos, podemos ejecutar este script y guardar el modelo resultante.
 
-¡Consulte train.py para explorar cómo empaquetar un modelo en un script que automatiza el entrenamiento del modelo!
+Consulte [train.py](https://github.com/No-Country-simulation/equipo-c23-17-data/blob/main/train.py)  para explorar cómo empaquetar un modelo en un script que automatiza el entrenamiento del modelo
 
 Una vez que descubrimos el modelo de mejor ajuste, debemos guardarlo para reutilizarlo más adelante sin ejecutar ninguno de los scripts del código de entrenamiento anteriores.  
