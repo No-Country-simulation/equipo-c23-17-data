@@ -108,7 +108,7 @@ En resumen, realizamos los siguientes pasos para crear nuestro modelo de predicc
   - Consulte [Churn_EDA_model_development.ipynb](https://github.com/No-Country-simulation/equipo-c23-17-data/blob/main/Churn_EDA_model_development.ipynb).
   - Utilizar diferentes métricas para evaluar el modelo, como la precisión, la tabla de confusión, la precisión, la exhaustividad, las curvas ROC, AUROC y la validación cruzada.
     
-### 8. Repita los pasos 6 y 7 para diferentes algoritmos e hiperparámetros del modelo, luego seleccione el modelo de mejor ajuste.
+### 8. Repetimos los pasos 6 y 7 para diferentes algoritmos e hiperparámetros del modelo, luego seleccione el modelo de mejor ajuste.
 Es una buena práctica automatizar el proceso de entrenamiento usando un script de Python. Cada vez que elegimos volver a entrenar el modelo con un nuevo parámetro o un nuevo conjunto de datos, podemos ejecutar este script y guardar el modelo resultante.
 
 Consulte [train.py](https://github.com/No-Country-simulation/equipo-c23-17-data/blob/main/train.py)  para explorar cómo empaquetar un modelo en un script que automatiza el entrenamiento del modelo
