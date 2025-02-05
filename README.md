@@ -33,28 +33,25 @@ Nuestro cliente, una empresa de Telecomunicación, identificó un problema creci
 
 ## **Diccionario de datos**
 
+
 | Nombre de la columna         | Tipo de dato          | Descripción |
 |-----------------------------|----------------------|-------------|
-| `id`                        | `INT`                | Identificador único de la transacción. |
-| `trans_date_trans_time`     | `DATETIME`           | Fecha y hora en la que ocurrió la transacción. |
-| `cc_num`                    | `BIGINT`             | Número de la tarjeta de crédito utilizada en la transacción. |
-| `merchant`                  | `VARCHAR(255)`       | Nombre del comerciante donde se realizó la transacción. |
-| `category`                  | `VARCHAR(50)`        | Categoría del comercio donde se realizó la transacción. |
-| `trans_amount`              | `DECIMAL(10,2)`      | Monto de la transacción en dólares. |
-| `first_name`                | `VARCHAR(50)`        | Nombre del titular de la tarjeta. |
-| `last_name`                 | `VARCHAR(50)`        | Apellido del titular de la tarjeta. |
-| `gender`                    | `CHAR(1)`            | Género del titular de la tarjeta (`M` = Masculino, `F` = Femenino). |
-| `street`                    | `VARCHAR(255)`       | Dirección del titular de la tarjeta. |
-| `city`                      | `VARCHAR(100)`       | Ciudad de residencia del titular de la tarjeta. |
-| `state_code`                | `CHAR(2)`            | Código del estado en el que reside el titular de la tarjeta. |
-| `zip`                       | `VARCHAR(10)`        | Código postal del titular de la tarjeta. |
-| `latitude`                  | `DECIMAL(9,6)`       | Latitud de la ubicación de residencia del titular. |
-| `longitude`                 | `DECIMAL(9,6)`       | Longitud de la ubicación de residencia del titular. |
-| `city_population`           | `INT`                | Población de la ciudad donde reside el titular de la tarjeta. |
-| `job`                       | `VARCHAR(100)`       | Profesión del titular de la tarjeta. |
-| `dob`                       | `DATE`               | Fecha de nacimiento del titular de la tarjeta. |
-| `trans_num`                 | `VARCHAR(50)`        | Identificador único de la transacción. |
-| `unix_time`                 | `BIGINT`             | Timestamp de la transacción en formato UNIX. |
-| `merch_lat`                 | `DECIMAL(9,6)`       | Latitud de la ubicación del comerciante. |
-| `merch_long`                | `DECIMAL(9,6)`       | Longitud de la ubicación del comerciante. |
-| `is_fraud`                  | `BOOLEAN`            | Indica si la transacción es fraudulenta (`true` = fraude, `false` = no fraude). |
+| `gender`                        | `object`                | El género de una persona. |
+| `seniorcitizen`     | `int64`           | Si un cliente puede clasificarse como un ciudadano de la tercera edad. |
+| `partner`                    | `object`             | Si un cliente está casado/ vive con su pareja. |
+| `dependents`                  | `object`       | Si un cliente tiene dependientes (hijos/ padres jubilados. |
+| `phoneservice`                  | `object`        | Si un cliente tiene un servicio de teléfono fijo junto con el servicio de Internet. |
+| `multiplelines`              | `object`      | Si un cliente tiene varias líneas de conectividad a Internet. |
+| `internetservice`                | `object`        | El tipo de servicios de Internet elegidos por el cliente. |
+| `onlinesecurity`                 | `object`        | Especifica si un cliente tiene seguridad en línea. |
+| `onlinebackup`                    | `object`            | Especifica si un cliente tiene copia de seguridad en línea. |
+| `deviceprotection`                    | `object`       | especifica si un cliente ha optado por la protección del dispositivo. |
+| `techsupport`                      | `object`       | Si un cliente ha optado por el soporte técnico o no. |
+| `streamingtv`                | `object`            | Si un cliente tiene la opción de transmisión de TV. |
+| `streamingmovies`                       | `object`        | Si un cliente tiene la opción de transmisión de películas. |
+| `contract`                  | `object`       | El tipo de contrato que ha elegido un cliente. |
+| `paperlessbilling`                 | `object`       | Si un cliente ha optado por la facturación sin papel. |
+| `paymentmethod`           | `object`                | Especifica el método por el cual se pagan las facturas. |
+| `tenure`                       | `int64`       | El tiempo durante el cual un cliente ha estado utilizando el servicio. |
+| `monthlycharges`                       | `float64`               | el dinero total que el cliente pagó a la empresa. |
+| `totalcharges`                 | `object`        | Identificador único de la transacción. |
