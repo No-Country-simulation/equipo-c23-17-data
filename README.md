@@ -26,7 +26,7 @@ La contenedorización de Docker ayuda a que esta aplicación sea independiente d
 
 Nuestro cliente, una empresa de Telecomunicación, identificó un problema creciente: **abandono de clientes**. Para abordar este desafío, nos pidieron analizar los datos de sus clientes, con dos objetivos claros:
 
-1️⃣ **Entender el comportamiento de los clientes y encontrar patrones**. </BR> (ver notebook "Churn_EDA_model_development.ipynb")
+1️⃣ **Entender el comportamiento de los clientes y encontrar patrones**. </BR> (ver notebook [Churn_EDA_model_development.ipynb](https://github.com/No-Country-simulation/equipo-c23-17-data/blob/main/Churn_EDA_model_development.ipynb))
 
 2️⃣ **Desarrollar un modelo predictivo** que permitiera calcular la probabilidad de que un cliente abandone la compañía.
 </BR>
