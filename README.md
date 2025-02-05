@@ -18,11 +18,19 @@ Para que estos modelos puedan hacer predicciones con nuevos datos, es fundamenta
 
 La contenedorización de Docker ayuda a que esta aplicación sea independiente del hardware y del sistema operativo. Los usuarios pueden acceder a la aplicación desde su navegador a través del punto de conexión, ingresar los detalles del cliente y recibir una probabilidad de abandono en una fracción de segundo. Si la puntuación de abandono de un cliente supera un umbral determinado, ese cliente puede recibir notificaciones push específicas y ofertas especiales. El diagrama a continuación pone esto en perspectiva:
 
+</BR>
+<div style="display: flex; justify-content: center; align-items: center; width: 100%;">
+    <img style="width: 95%;" src="/images/diagramastreamlitdocker.jpg" />
+</div>
+</BR>
+
 Nuestro cliente, una empresa de Telecomunicación, identificó un problema creciente: **abandono de clientes**. Para abordar este desafío, nos pidieron analizar los datos de sus clientes, con dos objetivos claros:
 
-1️⃣ **Entender el comportamiento de los clientes y encontrar patrones**. VER EL NOTEBOOK "Churn_EDA_model_development.ipynb"
+1️⃣ **Entender el comportamiento de los clientes y encontrar patrones**. </BR> (ver notebook "Churn_EDA_model_development.ipynb")
 
-2️⃣ **Desarrollar un modelo predictivo** que permitiera calcular la probabilidad de que un cliente abandone la compañía. VER https://equipo-c23-17-data-main.streamlit.app/
+2️⃣ **Desarrollar un modelo predictivo** que permitiera calcular la probabilidad de que un cliente abandone la compañía.
+</BR>
+(ver https://equipo-c23-17-data-main.streamlit.app/ )
 
 > [!NOTE]
 > Fuente del proyecto: [Kaggle dataset](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
@@ -45,7 +53,7 @@ Nuestro cliente, una empresa de Telecomunicación, identificó un problema creci
 | `internetservice`                | `object`        | El tipo de servicios de Internet elegidos por el cliente. |
 | `onlinesecurity`                 | `object`        | Especifica si un cliente tiene seguridad en línea. |
 | `onlinebackup`                    | `object`            | Especifica si un cliente tiene copia de seguridad en línea. |
-| `deviceprotection`                    | `object`       | especifica si un cliente ha optado por la protección del dispositivo. |
+| `deviceprotection`                    | `object`       | Especifica si un cliente ha optado por la protección del dispositivo. |
 | `techsupport`                      | `object`       | Si un cliente ha optado por el soporte técnico o no. |
 | `streamingtv`                | `object`            | Si un cliente tiene la opción de transmisión de TV. |
 | `streamingmovies`                       | `object`        | Si un cliente tiene la opción de transmisión de películas. |
@@ -53,5 +61,52 @@ Nuestro cliente, una empresa de Telecomunicación, identificó un problema creci
 | `paperlessbilling`                 | `object`       | Si un cliente ha optado por la facturación sin papel. |
 | `paymentmethod`           | `object`                | Especifica el método por el cual se pagan las facturas. |
 | `tenure`                       | `int64`       | El tiempo durante el cual un cliente ha estado utilizando el servicio. |
-| `monthlycharges`                       | `float64`               | el dinero total que el cliente pagó a la empresa. |
+| `monthlycharges`                       | `float64`               | El dinero total que el cliente pagó a la empresa. |
 | `totalcharges`                 | `object`        | Identificador único de la transacción. |
+
+
+<H2> Construyendo un modelo simple de aprendizaje automático </H2>
+
+El aprendizaje automático utiliza algoritmos y modelos estadísticos. Estos analizan datos históricos y hacen inferencias a partir de patrones sin ninguna programación explícita. En última instancia, el objetivo es predecir resultados basados en los datos entrantes.
+
+En nuestro caso, estamos creando un modelo a partir de datos históricos de clientes para predecir qué clientes tienen más probabilidades de abandonar. Dado que necesitamos clasificar a los clientes como baja o no baja, entrenaremos un modelo de clasificación simple pero potente. Nuestro modelo utiliza regresión logística en un conjunto de datos históricos de clientes de una empresa de telecomunicaciones. Este conjunto rastrea la demografía del cliente, la antigüedad, los cargos mensuales y más. Sin embargo, también se responde una pregunta clave: ¿el cliente abandonó?
+
+La regresión logística estima la probabilidad de un evento basándose en un conjunto de datos dado de variables independientes. Dado que el resultado es una probabilidad, la variable dependiente está acotada entre 0 y 1. El modelo se someterá a múltiples iteraciones y calculará los coeficientes de mejor ajuste para cada variable. Esto cuantifica cuánto impacta cada uno en la deserción. Con estos coeficientes, el modelo puede asignar puntajes de probabilidad de deserción entre 0 y 1 a los nuevos clientes. Alguien que obtenga un puntaje de 1 tiene una probabilidad extremadamente alta de abandonar. Alguien con un 0 tiene una probabilidad increíblemente baja de abandonar.
+
+Python tiene excelentes bibliotecas como Pandas, NumPy y Matplotlib que admiten el análisis de datos. Los marcos de código abierto como Scikit Learn tienen wrappers preconstruidos para varios modelos de ML. Usaremos su API para entrenar un modelo de regresión logística. Para comprender cómo nació este modelo básico de predicción de deserción, consulte [Churn_EDA_model_development.ipynb](https://github.com/No-Country-simulation/equipo-c23-17-data/blob/main/Churn_EDA_model_development.ipynb).
+
+En resumen, realizamos los siguientes pasos para crear nuestro modelo de predicción de deserción:
+
+1. Preparación inicial de datos
+  - Realizar comprobaciones de cordura en los tipos de datos y los nombres de las columnas
+  - Realizar correcciones de tipo de datos si es necesario
+    
+2. Comprensión de datos y características
+  - Verificar la distribución de las características numéricas
+  - Verificar los valores distintos de las características categóricas
+  - Verificar la distribución de la característica objetivo
+    
+3. Análisis exploratorio de datos
+  - Manejar los valores faltantes
+  - Manejar los valores atípicos
+  - Comprender las correlaciones e identificar las espurias
+    
+4. Ingeniería de características e importancia
+Analizar la tasa de deserción y los puntajes de riesgo en diferentes cohortes y grupos de características
+Calcular la información mutua
+Verificar las correlaciones de características
+Codificación de características categóricas y escalado de características numéricas
+Convertir las características categóricas en valores numéricos utilizando la función auxiliar de Scikit-Learn: Dictionary Vectoriser
+Escalar las características numéricas para estandarizarlas en un rango fijo
+Entrenamiento del modelo
+Seleccionar un algoritmo de ML apropiado
+Entrenar el modelo con parámetros personalizados
+Evaluación del modelo
+Consulte Churn_model_metrics.ipynb
+Utilizar diferentes métricas para evaluar el modelo, como la precisión, la tabla de confusión, la precisión, la exhaustividad, las curvas ROC, AUROC y la validación cruzada.
+Repita los pasos 6 y 7 para diferentes algoritmos e hiperparámetros del modelo, luego seleccione el modelo de mejor ajuste.
+Es una buena práctica automatizar el proceso de entrenamiento usando un script de Python. Cada vez que elegimos volver a entrenar el modelo con un nuevo parámetro o un nuevo conjunto de datos, podemos ejecutar este script y guardar el modelo resultante.
+
+¡Consulte train.py para explorar cómo empaquetar un modelo en un script que automatiza el entrenamiento del modelo!
+
+Una vez que descubrimos el modelo de mejor ajuste, debemos guardarlo para reutilizarlo más adelante sin ejecutar ninguno de los scripts del código de entrenamiento anteriores.  
